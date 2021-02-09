@@ -4,4 +4,3 @@ pandas==1.0.1
 pillow==8.1.0
 streamlit==0.75.0
 sklearn
-base64
