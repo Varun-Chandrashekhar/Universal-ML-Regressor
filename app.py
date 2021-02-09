@@ -131,8 +131,3 @@ if uploaded_file is not None:
     st.markdown(tmp_download_link, unsafe_allow_html=True)
 
   st.success('Create a file named "input.csv" and place it in the same folder as the regressor model and the Code to make Predictions')
-
-!pip install streamlit
-!npm install localtunnel
-!streamlit run app.py &>/dev/null&
-!npx localtunnel --port 8501
