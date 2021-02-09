@@ -37,14 +37,13 @@ st.sidebar.header('User Input Dataset and Parameters')
 
 
 st.sidebar.markdown("""
-[Example CSV input file](https://raw.githubusercontent.com/dataprofessor/data/master/penguins_example.csv)
+[Example CSV input file](https://drive.google.com/file/d/16iVua1vtUVvRno8lmTH_ZQ7f964OXDiU/view?usp=sharing)
 """)
 uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
 
 split_ratio = st.sidebar.slider('Train Test Split Ratio (Input Test Percentage)', 0, 100, 80, 10)
 split_ratio = split_ratio/100
 model = st.selectbox('ML Regressor Model', ('Linear Regression', 'Polynomial Regression', 'SVM Support Vector Machine', 'Decision Tree', 'Random Forest', 'XG Boost'))
-poly_degree = st.sidebar.slider('Polynomial Regressor Degree', 0, 5, 2)
 
 
 if uploaded_file is not None:
@@ -62,6 +61,7 @@ if uploaded_file is not None:
     regressor = LinearRegression()
     regressor.fit(X_train, y_train)
   elif model == 'Polynomial Regression':
+    poly_degree = st.sidebar.slider('Polynomial Regressor Degree', 0, 5, 2)
     from sklearn.linear_model import LinearRegression
     regressor = LinearRegression()
     regressor.fit(X, y)
